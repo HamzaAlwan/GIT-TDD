@@ -9,7 +9,16 @@ app.use(express.static(path.join(__dirname, '../angular-client/')));
 
 app.get('/cats', function (req, res) {
   // TODO - your code here!
- 
+  db.Cat.find({},function(err, data){
+  	if(err){
+  		console.log(err);
+  	} else {
+  		console.log("lolo",data)
+  		res.send(data)
+  	}
+  })
+  
+
 });
 
 app.post('/cats', function (req, res) {
