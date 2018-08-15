@@ -13,7 +13,7 @@ app.get('/cats', function (req, res) {
   	if(err){
   		console.log(err);
   	} else {
-  		console.log("lolo",data)
+  		//console.log("lolo",data)
   		res.send(data)
   	}
   })
@@ -23,10 +23,19 @@ app.get('/cats', function (req, res) {
 
 app.post('/cats', function (req, res) {
   // TODO - your code here!
-  
-})
+//console.log(req.data);
+// var item = new Cat(data)
+//   item.save(function(err){
+//     if(err){
+//       console.log(err);
+//     } else {
+//       return callback();
+//     }
+//   })
 
+  res.send(req.body)
 
+ });
 
 
 let port = 1128;

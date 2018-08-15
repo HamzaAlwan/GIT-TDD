@@ -5,7 +5,6 @@ const request = require("supertest")
 const db = require ("../database/index")
 var expect = chai.expect
 
-
 var assert = require('assert');
 describe('Array', function() {
   describe('#indexOf()', function() {
@@ -31,4 +30,13 @@ it('should list ALL data on /index GET', function(done) {
        .end(done)
    
 });
+
+it('should send post params in request body', function(done) {
+  request(app)
+    .get('/cats')
+      .expect(200)
+       .end(done)
+   
+});
+
 });
